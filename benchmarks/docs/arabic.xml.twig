@@ -1,0 +1,20 @@
+{#- The Arabic benchmark report in YetiPDF markup (benchmarks/docs/arabic.json, made up by tools/bench-docs.php). -#}
+<document font="DejaVu Sans" size="11pt" color="#14161b" lang="ar" leading="0.7em" par-spacing="0.9em" title="{{ d.title }}">
+  <page paper="a4" margin="56pt"/>
+  <block size="20pt" weight="bold" spacing="6pt">{{ d.title }}</block>
+  <block size="11pt" color="#4b5059">{{ d.subtitle }}</block>
+  {%- for s in d.sections %}
+  <block size="14pt" weight="bold" above="18pt" below="8pt">{{ s.title }}</block>
+  {%- for p in s.paragraphs %}
+  <block>{{ p }}</block>
+  {%- endfor %}
+  {%- if s.table %}
+  <table columns="1fr 1fr 1fr 1fr" inset="4pt 6pt" stroke-bottom="0.4pt #c9ccd3">
+    <header weight="bold">{% for h in s.table.head %}<cell>{{ h }}</cell>{% endfor %}</header>
+    {%- for r in s.table.rows %}
+    <row>{% for v in r %}<cell>{{ v }}</cell>{% endfor %}</row>
+    {%- endfor %}
+  </table>
+  {%- endif %}
+  {%- endfor %}
+</document>

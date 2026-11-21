@@ -1,0 +1,193 @@
+{#- An invoice in YetiPDF markup (the data in invoice.json is made up; tools/invoice-example.php builds it). -#}
+{%- set ink = '#14161b' -%}
+{%- set ink2 = '#4b5059' -%}
+{%- set ink3 = '#7a7f89' -%}
+{%- set rule = '#e3e5ea' -%}
+{%- set rule2 = '#c9ccd3' -%}
+{%- set wash = '#f5f6f8' -%}
+{%- set tones = {paid: '#1d7044', overdue: '#b3261e', void: ink2, draft: ink3} -%}
+<document font="Figtree" size="9pt" color="{{ ink }}" numbers="tabular" leading="0.48em" par-spacing="0.6em"
+          title="Invoice {{ d.number }} – {{ d.client }}" author="{{ d.brand.name }}">
+  <style name="eyebrow" size="6.6pt" weight="semibold" tracking="0.09em" color="{{ ink3 }}" case="upper"/>
+
+  <page paper="{{ d.paper }}" margin="44pt 46pt 60pt" header-ascent="14pt" footer-descent="14pt">
+    {%- if d.watermark %}
+    <background>
+      {#- Low on the page, under the lines and totals rather than through the heading. -#}
+      <place align="center horizon" dy="70pt">
+        <rotate angle="-32deg"><text size="120pt" weight="bold" tracking="0.08em" color="luma(92%)">{{ d.watermark }}</text></rotate>
+      </place>
+    </background>
+    {%- endif %}
+    <header pages="not-first" size="7.4pt" color="{{ ink3 }}">
+      <grid columns="1fr auto" align="bottom">
+        <cell weight="semibold" color="{{ ink2 }}">{{ d.brand.name }}</cell>
+        <cell align="right"><text weight="medium" color="{{ ink2 }}">Invoice {{ d.number }}</text><h size="5pt"/>·<h size="5pt"/>{{ d.client }}</cell>
+      </grid>
+      <v size="-2pt"/>
+      <line stroke="0.4pt {{ rule }}"/>
+    </header>
+    <footer size="6.8pt" color="{{ ink3 }}">
+      <line stroke="0.4pt {{ rule }}" below="5pt"/>
+      <grid columns="1fr auto" column-gutter="24pt">
+        <cell color="{{ ink2 }}">{% for l in d.brand.note %}{{ l }}{% if not loop.last %}<br/>{% endif %}{% endfor %}</cell>
+        <cell align="right">
+          <text weight="medium" color="{{ ink2 }}">Page <page-number/> of <page-count/></text><br/>
+          Generated {{ d.generated }}<h size="4pt"/>·<h size="4pt"/><text size="5.8pt">quillmoor.example</text>
+        </cell>
+      </grid>
+    </footer>
+  </page>
+
+  {#- Letterhead -#}
+  <grid columns="1fr auto" column-gutter="24pt" align="horizon">
+    {%- if d.brand.logo %}
+    <cell>
+      <grid columns="auto auto" column-gutter="10pt" align="horizon">
+        <image src="{{ d.brand.logo }}" height="34pt"/>
+        <cell size="19pt" weight="bold" tracking="-0.015em">{{ d.brand.name }}</cell>
+      </grid>
+    </cell>
+    {%- else %}
+    <cell size="21pt" weight="bold" tracking="-0.015em">{{ d.brand.name }}</cell>
+    {%- endif %}
+    <cell align="right" size="7.6pt" color="{{ ink2 }}" leading="0.42em">{% for l in d.brand.details %}{{ l }}{% if not loop.last %}<br/>{% endif %}{% endfor %}</cell>
+  </grid>
+  <v size="10pt"/>
+  <grid columns="72pt 1fr" rows="2.2pt" align="horizon">
+    <line stroke="2.2pt {{ d.brand.accent }}"/>
+    <line stroke="0.5pt {{ rule }}"/>
+  </grid>
+
+  {#- Heading and bill-to -#}
+  <v size="20pt"/>
+  <grid columns="1fr 200pt" column-gutter="24pt">
+    <cell>
+      <block class="eyebrow" color="{{ d.brand.accent_text }}" spacing="0pt">Invoice</block>
+      <v size="8pt"/>
+      <block spacing="0pt"><text size="24pt" weight="semibold" tracking="-0.015em">{{ d.number }}</text>
+        {%- if d.mark -%}
+          {%- set c = tones[d.mark.tone] -%}
+          <h size="12pt"/><box baseline="-5pt" stroke="1.3pt {{ c }}{{ d.mark.tone == 'draft' ? ' dashed' : '' }}" radius="3pt" inset="4pt 7pt"><text size="9pt" weight="bold" tracking="0.16em" color="{{ c }}" case="upper">{{ d.mark.label }}</text></box>
+        {%- endif -%}
+      </block>
+    </cell>
+    <cell>
+      <block class="eyebrow" spacing="0pt">Bill to</block>
+      <v size="7pt"/>
+      <block leading="0.46em" spacing="0pt">
+        <text size="10pt" weight="semibold">{{ d.bill_to|first }}</text>
+        {%- for l in d.bill_to|slice(1) %}<br/><text size="8.4pt" color="{{ ink2 }}">{{ l }}</text>{% endfor -%}
+        {%- if d.email %}<br/><text size="8.4pt" color="{{ ink3 }}">{{ d.email }}</text>{% endif -%}
+      </block>
+    </cell>
+  </grid>
+
+  {#- Facts strip -#}
+  <v size="16pt"/>
+  <block stroke="0.5pt {{ rule }}" radius="9pt" inset="2.5pt">
+    <block fill="{{ wash }}" radius="7pt" inset="10pt 14pt">
+      <grid columns="{% for f in d.facts %}{{ f.strong ? '1.3fr' : (f.label == 'Period' ? '1.55fr' : '1fr') }} {% endfor %}">
+        {%- for f in d.facts %}
+          {%- set c = f.tone ? tones[f.tone] : ink -%}
+          <cell inset="0pt 6pt 0pt {{ loop.first ? '0pt' : '12pt' }}" stroke-left="{{ loop.first ? 'none' : '0.5pt ' ~ rule2 }}">
+            <block class="eyebrow" spacing="0pt" color="{{ f.strong and f.tone ? c : ink3 }}">{{ f.label }}</block>
+            <v size="8pt"/>
+            <block spacing="0pt" fit="shrink" size="{{ f.strong ? '17pt' : '12.5pt' }}" weight="{{ f.strong ? 'semibold' : 'medium' }}" color="{{ f.strong ? c : ink }}">{{ f.value }}</block>
+            <v size="5pt"/>
+            <block spacing="0pt" size="7pt" color="{{ f.tone and not f.strong ? c : ink3 }}">{{ f.sub ?: '&#160;'|raw }}</block>
+          </cell>
+        {%- endfor %}
+      </grid>
+    </block>
+  </block>
+
+  {#- Chart: hours by week, with the legend beside the heading and the weeks under the columns -#}
+  {%- if d.chart %}
+  {%- set ch = d.chart %}
+  <v size="18pt"/>
+  <grid columns="1fr auto" align="bottom">
+    <cell>
+      <block class="eyebrow" spacing="0pt">{{ ch.title }}</block>
+      <v size="6pt"/>
+      <block spacing="0pt" size="11pt" weight="semibold">{{ ch.total }}</block>
+    </cell>
+    <cell align="right" size="7.4pt" color="{{ ink2 }}">
+      {%- for l in ch.legend %}<box fill="{{ l.color }}" radius="1.5pt" width="7pt" height="7pt" baseline="-0.5pt"/><h size="4pt"/>{{ l.label }}<h size="3pt"/><text color="{{ ink3 }}">{{ l.hours }}</text>{% if not loop.last %}<h size="12pt"/>{% endif %}{% endfor -%}
+    </cell>
+  </grid>
+  <v size="8pt"/>
+  <image src="{{ ch.src }}" width="100%" spacing="0pt"/>
+  <v size="5pt"/>
+  <grid columns="{% for w in ch.weeks %}1fr {% endfor %}">
+    {%- for w in ch.weeks %}
+    <cell align="center">
+      <block spacing="0pt" size="7.6pt" weight="medium">{{ w.hours }}</block>
+      <v size="2pt"/>
+      <block spacing="0pt" size="6.6pt" color="{{ ink3 }}">{{ w.label }}</block>
+    </cell>
+    {%- endfor %}
+  </grid>
+  {%- endif %}
+
+  {#- Lines -#}
+  <v size="20pt"/>
+  <table columns="1fr 64pt 74pt 82pt" inset="6.2pt 6pt">
+    <header class="eyebrow" inset="2pt 6pt 5pt" stroke-bottom="0.7pt {{ rule2 }}">
+      <cell stroke-bottom="0.7pt {{ rule2 }}">Description</cell>
+      <cell stroke-bottom="0.7pt {{ rule2 }}" align="right">Qty</cell>
+      <cell stroke-bottom="0.7pt {{ rule2 }}" align="right">Unit price</cell>
+      <cell stroke-bottom="0.7pt {{ rule2 }}" align="right">Amount</cell>
+    </header>
+    {%- for l in d.lines %}
+      {%- if not loop.first %}<hline stroke="0.4pt {{ rule }}"/>{% endif %}
+      <row{% if loop.last %} keep="with-next"{% endif %}>
+        <cell>
+          <block spacing="0pt" weight="medium">{{ l.description }}</block>
+          {%- if l.detail %}<v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="{{ ink3 }}">{{ l.detail }}</block>{% endif %}
+        </cell>
+        <cell align="right" color="{{ ink2 }}">{{ l.qty }}{% if l.unit %}<h size="2.5pt"/><text size="7.6pt" color="{{ ink3 }}">{{ l.unit }}</text>{% endif %}</cell>
+        <cell align="right" color="{{ ink2 }}">{{ l.price }}</cell>
+        <cell align="right" weight="medium">{{ l.amount }}</cell>
+      </row>
+    {%- endfor %}
+    <hline stroke="0.7pt {{ rule2 }}"/>
+    <row>
+      <cell colspan="4" inset="12pt 6pt 0pt">
+        <grid columns="1fr 238pt" column-gutter="30pt">
+          <cell inset-top="4pt">
+            {%- if d.notes %}
+              <block class="eyebrow" spacing="0pt">Notes</block>
+              <v size="7pt"/>
+              <block size="8.2pt" color="{{ ink2 }}" leading="0.5em">{% for n in d.notes %}{{ n }}{% if not loop.last %}<br/>{% endif %}{% endfor %}</block>
+            {%- endif %}
+          </cell>
+          <cell size="8.8pt">
+            <table columns="1fr auto" inset="3.6pt 0pt">
+              {%- for t in d.totals %}
+                {%- set total = t.kind == 'total' %}
+                {%- if total and not loop.first %}<hline stroke="0.8pt {{ ink }}"/>{% endif %}
+                <row{% if total %} weight="semibold" inset="6pt 0pt 4pt"{% endif %}>
+                  <cell color="{{ total ? ink : ink2 }}">{{ t.label }}</cell>
+                  <cell align="right" inset-left="14pt">{{ t.value }}</cell>
+                </row>
+              {%- endfor %}
+            </table>
+            <v size="6pt"/>
+            {%- set b = d.balance %}
+            {%- set c = b.tone ? tones[b.tone] : ink %}
+            <block stroke="0.5pt {{ rule }}" radius="8pt" inset="2.5pt">
+              <block fill="{{ wash }}" radius="6pt" inset="9pt 11pt">
+                <grid columns="1fr auto" column-gutter="10pt" align="horizon">
+                  <cell size="9.6pt" weight="semibold" color="{{ c }}">{{ b.label }}</cell>
+                  <cell size="16pt" weight="bold" color="{{ c }}" align="right">{{ b.value }}</cell>
+                </grid>
+                {%- if b.sub %}<v size="3pt"/><text size="7.2pt" color="{{ b.tone == 'overdue' ? c : ink3 }}" weight="{{ b.tone == 'overdue' ? 'medium' : 'regular' }}">{{ b.sub }}</text>{% endif %}
+              </block>
+            </block>
+          </cell>
+        </grid>
+      </cell>
+    </row>
+  </table>
+</document>

@@ -1,0 +1,1 @@
+<document font="Figtree" size="10pt" par-spacing="6pt" leading="4pt"><page paper="300pt 300pt" margin="10pt"/><table columns="60pt 1fr 1fr" inset="5pt" stroke="0.5pt"><cell rowspan="2">Span<br/>two<br/>rows<br/>tall<br/>cell</cell><cell>B1</cell><cell>C1</cell><cell>B2</cell><cell>C2</cell><cell colspan="2">Wide cell</cell><cell>C3</cell></table></document>

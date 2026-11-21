@@ -1,0 +1,156 @@
+{#- The example invoice as HTML/CSS for Dompdf, mPDF and TCPDF: same data, same design, built with
+    tables since none of them supports flexbox or grid. -#}
+{%- set ink = '#14161b' -%}
+{%- set ink2 = '#4b5059' -%}
+{%- set ink3 = '#7a7f89' -%}
+{%- set rule = '#e3e5ea' -%}
+{%- set rule2 = '#c9ccd3' -%}
+{%- set wash = '#f5f6f8' -%}
+{%- set tones = {paid: '#1d7044', overdue: '#b3261e', void: ink2, draft: ink3} -%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Invoice {{ d.number }} – {{ d.client }}</title>
+<style>
+  @font-face { font-family: 'Figtree'; font-weight: 400; src: url('{{ fonts }}/Figtree-Regular.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 500; src: url('{{ fonts }}/Figtree-Medium.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 600; src: url('{{ fonts }}/Figtree-SemiBold.ttf'); }
+  @font-face { font-family: 'Figtree'; font-weight: 700; src: url('{{ fonts }}/Figtree-Bold.ttf'); }
+  @page { size: A4; margin-top: 44pt; margin-right: 46pt; margin-bottom: 60pt; margin-left: 46pt; }
+  body { font-family: 'Figtree', sans-serif; font-size: 9pt; color: {{ ink }}; line-height: 1.25; margin: 0; }
+  table { border-collapse: collapse; width: 100%; }
+  td { padding: 0; vertical-align: top; }
+  .eyebrow { font-size: 6.6pt; font-weight: 600; letter-spacing: 0.09em; color: {{ ink3 }}; text-transform: uppercase; }
+  .muted { color: {{ ink2 }}; }
+  .faint { color: {{ ink3 }}; }
+  .right { text-align: right; }
+  .brand { font-size: 21pt; font-weight: 700; letter-spacing: -0.015em; }
+  .details { font-size: 7.6pt; color: {{ ink2 }}; text-align: right; line-height: 1.3; }
+  .number { font-size: 24pt; font-weight: 600; letter-spacing: -0.015em; }
+  .pill { font-size: 9pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border: 1.3pt solid; border-radius: 3pt; padding: 3pt 7pt; }
+  .bezel { border: 0.5pt solid {{ rule }}; border-radius: 9pt; padding: 2.5pt; }
+  .bezel-core { background: {{ wash }}; border-radius: 7pt; padding: 10pt 14pt; }
+  .facts td { padding: 0 6pt 0 12pt; border-left: 0.5pt solid {{ rule2 }}; }
+  .facts td.first { padding-left: 0; border-left: none; }
+  .lines th { font-size: 6.6pt; font-weight: 600; letter-spacing: 0.09em; color: {{ ink3 }}; text-transform: uppercase; text-align: left; padding: 2pt 6pt 5pt; border-bottom: 0.7pt solid {{ rule2 }}; }
+  .lines th.r { text-align: right; }
+  .lines td { padding: 6.2pt 6pt; border-top: 0.4pt solid {{ rule }}; }
+  .lines tr.first td { border-top: none; }
+  .lines td.num { text-align: right; color: {{ ink2 }}; }
+  .lines td.amt { text-align: right; font-weight: 500; }
+  .desc { font-weight: 500; }
+  .detail { font-size: 7.4pt; color: {{ ink3 }}; margin-top: 2pt; }
+  .unit { font-size: 7.6pt; color: {{ ink3 }}; }
+  .totals td { padding: 3.6pt 0; font-size: 8.8pt; }
+  .totals tr.total td { padding: 6pt 0 4pt; font-weight: 600; border-top: 0.8pt solid {{ ink }}; }
+  .balance { border: 0.5pt solid {{ rule }}; border-radius: 8pt; padding: 2.5pt; margin-top: 6pt; }
+  .balance-core { background: {{ wash }}; border-radius: 6pt; padding: 9pt 11pt; }
+  .footer { position: fixed; bottom: -46pt; left: 0; right: 0; font-size: 6.8pt; color: {{ ink3 }}; border-top: 0.4pt solid {{ rule }}; padding-top: 5pt; }
+</style>
+</head>
+<body>
+  <div class="footer">
+    <table><tr>
+      <td class="muted">{% for l in d.brand.note %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+      <td class="right">Generated {{ d.generated }} · <span style="font-size:5.8pt">quillmoor.example</span></td>
+    </tr></table>
+  </div>
+
+  <table><tr>
+    <td style="vertical-align: middle; width: 60%">
+      {%- if d.brand.logo %}
+      <table style="width: auto"><tr>
+        <td style="vertical-align: middle; width: 34pt"><img src="{{ assets }}/{{ d.brand.logo }}" style="width: 34pt; height: 34pt"></td>
+        <td class="brand" style="vertical-align: middle; padding-left: 10pt; font-size: 19pt; white-space: nowrap; width: 200pt">{{ d.brand.name }}</td>
+      </tr></table>
+      {%- else %}<span class="brand">{{ d.brand.name }}</span>{% endif %}
+    </td>
+    <td class="details" style="vertical-align: middle">{% for l in d.brand.details %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+  </tr></table>
+  <table style="margin-top: 10pt"><tr>
+    <td style="width: 72pt; border-bottom: 2.2pt solid {{ d.brand.accent }}"></td>
+    <td style="border-bottom: 0.5pt solid {{ rule }}"></td>
+  </tr></table>
+
+  <table style="margin-top: 20pt"><tr>
+    <td>
+      <div class="eyebrow" style="color: {{ d.brand.accent_text }}">Invoice</div>
+      <div style="margin-top: 6pt"><span class="number">{{ d.number }}</span>
+        {%- if d.mark %} &nbsp; <span class="pill" style="color: {{ tones[d.mark.tone] }}; border-color: {{ tones[d.mark.tone] }}">{{ d.mark.label }}</span>{% endif %}</div>
+    </td>
+    <td style="width: 200pt; padding-left: 24pt">
+      <div class="eyebrow">Bill to</div>
+      <div style="margin-top: 5pt; font-size: 10pt; font-weight: 600">{{ d.bill_to|first }}</div>
+      <div style="font-size: 8.4pt; color: {{ ink2 }}">{% for l in d.bill_to|slice(1) %}{{ l }}<br>{% endfor %}<span class="faint">{{ d.email }}</span></div>
+    </td>
+  </tr></table>
+
+  <div class="bezel" style="margin-top: 16pt"><div class="bezel-core">
+    <table class="facts"><tr>
+      {%- for f in d.facts %}
+        {%- set c = f.tone ? tones[f.tone] : ink %}
+        <td class="{{ loop.first ? 'first' : '' }}">
+          <div class="eyebrow" style="color: {{ f.strong and f.tone ? c : ink3 }}">{{ f.label }}</div>
+          <div style="margin-top: 6pt; font-size: {{ f.strong ? '17pt' : '12.5pt' }}; font-weight: {{ f.strong ? 600 : 500 }}; color: {{ f.strong ? c : ink }}">{{ f.value }}</div>
+          <div style="margin-top: 3pt; font-size: 7pt; color: {{ ink3 }}">{{ f.sub ?: '&nbsp;'|raw }}</div>
+        </td>
+      {%- endfor %}
+    </tr></table>
+  </div></div>
+
+  {%- if d.chart %}{% set ch = d.chart %}
+  <table style="margin-top: 18pt"><tr>
+    <td style="vertical-align: bottom">
+      <div class="eyebrow">{{ ch.title }}</div>
+      <div style="margin-top: 4pt; font-size: 11pt; font-weight: 600">{{ ch.total }}</div>
+    </td>
+    <td class="right" style="vertical-align: bottom; font-size: 7.4pt; color: {{ ink2 }}">
+      {%- for l in ch.legend %}<span style="background-color: {{ l.color }}; font-size: 6pt">&nbsp;&nbsp;&nbsp;</span>&nbsp;{{ l.label }} <span class="faint">{{ l.hours }}</span>{% if not loop.last %}&nbsp;&nbsp;&nbsp;&nbsp;{% endif %}{% endfor -%}
+    </td>
+  </tr></table>
+  <div style="margin-top: 8pt"><img src="{{ assets }}/{{ ch.src }}" style="width: 503pt"></div>
+  <table style="margin-top: 4pt"><tr>
+    {%- for w in ch.weeks %}
+    <td style="width: {{ 100 / ch.weeks|length }}%; text-align: center"><div style="font-size: 7.6pt; font-weight: 500">{{ w.hours }}</div><div style="font-size: 6.6pt; color: {{ ink3 }}">{{ w.label }}</div></td>
+    {%- endfor %}
+  </tr></table>
+  {%- endif %}
+
+  <table class="lines" style="margin-top: 20pt">
+    <thead><tr><th>Description</th><th class="r" style="width: 52pt">Qty</th><th class="r" style="width: 62pt">Unit price</th><th class="r" style="width: 70pt">Amount</th></tr></thead>
+    <tbody>
+    {%- for l in d.lines %}
+      <tr class="{{ loop.first ? 'first' : '' }}">
+        <td><div class="desc">{{ l.description }}</div>{% if l.detail %}<div class="detail">{{ l.detail }}</div>{% endif %}</td>
+        <td class="num">{{ l.qty }} <span class="unit">{{ l.unit }}</span></td>
+        <td class="num">{{ l.price }}</td>
+        <td class="amt">{{ l.amount }}</td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+
+  <table style="margin-top: 12pt; border-top: 0.7pt solid {{ rule2 }}; page-break-inside: avoid"><tr>
+    <td style="padding: 16pt 30pt 0 6pt">
+      <div class="eyebrow">Notes</div>
+      <div style="margin-top: 5pt; font-size: 8.2pt; color: {{ ink2 }}">{% for n in d.notes %}{{ n }}<br>{% endfor %}</div>
+    </td>
+    <td style="width: 238pt; padding: 12pt 6pt 0 0">
+      <table class="totals">
+        {%- for t in d.totals %}
+          <tr class="{{ t.kind == 'total' and not loop.first ? 'total' : '' }}"><td class="{{ t.kind == 'total' ? '' : 'muted' }}">{{ t.label }}</td><td class="right">{{ t.value }}</td></tr>
+        {%- endfor %}
+      </table>
+      {%- set b = d.balance %}{% set c = b.tone ? tones[b.tone] : ink %}
+      <div class="balance"><div class="balance-core">
+        <table><tr>
+          <td style="font-size: 9.6pt; font-weight: 600; color: {{ c }}; vertical-align: middle">{{ b.label }}</td>
+          <td class="right" style="font-size: 16pt; font-weight: 700; color: {{ c }}">{{ b.value }}</td>
+        </tr></table>
+        <div style="margin-top: 3pt; font-size: 7.2pt; color: {{ c }}; font-weight: 500">{{ b.sub }}</div>
+      </div></div>
+    </td>
+  </tr></table>
+</body>
+</html>

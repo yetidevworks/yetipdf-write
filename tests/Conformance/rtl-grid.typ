@@ -1,0 +1,10 @@
+#set page(width: 240pt, height: 300pt, margin: 10pt)
+#set text(font: "DejaVu Sans", size: 10pt, lang: "he")
+#set par(leading: 4pt, spacing: 6pt)
+#grid(columns: (60pt, 1fr, auto), [א], [ב], [גגג])
+#table(columns: 2, [א], [ב], table.cell(colspan: 2)[ג])
+#table(columns: (50pt, 70pt, 40pt), column-gutter: 6pt, stroke: 1pt, [אב], [גד], [הו], table.cell(colspan: 2)[זח], [טי])
+#table(columns: (60pt, 60pt), inset: (left: 15pt, right: 2pt), [א], [ב])
+#table(columns: (40pt, 40pt, 40pt), stroke: none, table.cell(rowspan: 2)[א], [ב], [ג], table.cell(colspan: 2)[דה])
+#[#set text(lang: "en")
+#table(columns: (60pt, 60pt), [A], [B])]

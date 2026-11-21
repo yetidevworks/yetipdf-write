@@ -1,0 +1,10 @@
+<document font="Figtree" size="9pt" par-spacing="6pt" leading="4pt"><page paper="300pt 200pt" margin="10pt"/>
+<table columns="50pt 1fr 40pt" inset="5pt" stroke="0.5pt">
+<header fill="luma(90%)"><cell>Item</cell><cell>Description</cell><cell>Qty</cell></header>
+<cell>A</cell><cell>Short row</cell><cell>1</cell>
+<cell>B</cell><cell>Short row</cell><cell>2</cell>
+<cell>C</cell><cell>Short row</cell><cell>3</cell>
+<cell>D</cell><cell>Short row</cell><cell>4</cell>
+<cell>E</cell><cell>This row has a long description that runs over several lines so that the row cannot fit on the first page and has to break across the page boundary. It keeps going with more words to fill another page, which shows how insets and strokes are drawn on each piece of the row. Even more text follows here, line after line, until the row needs a third region to finish its content properly. And a final sentence.</cell><cell>5</cell>
+<cell>F</cell><cell>After</cell><cell>6</cell>
+</table></document>

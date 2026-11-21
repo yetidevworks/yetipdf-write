@@ -1,0 +1,572 @@
+{
+    "unicode": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "all five words",
+            "valid": true
+        }
+    },
+    "weights": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "fonts: Figtree-Regular, Figtree-Medium, Figtree-SemiBold, Figtree-Bold",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "fonts: Figtree-Regular, Figtree-Medium, Figtree-SemiBold, Figtree-Bold",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "fonts: Figtree-Regular, Figtree-Medium, Figtree-SemiBold, Figtree-Bold",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": false,
+            "note": "fonts: Figtree-Regular",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": false,
+            "note": "fonts: Helvetica, Figtree-Regular, Figtree-Bold",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "fonts: Figtree-Regular, Figtree-Medium, Figtree-SemiBold, Figtree-Bold",
+            "valid": true
+        }
+    },
+    "kerning": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "width 201.0pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "width 201.0pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "width 201.0pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "width 201.2pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": false,
+            "note": "width 218.9pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "width 218.9pt (kerned 201.0, unkerned 218.9)",
+            "valid": true
+        }
+    },
+    "ligatures": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "width 109.7pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "width 109.7pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "width 109.7pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "width 109.8pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": false,
+            "note": "width 110.4pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "width 110.4pt (with ligature 109.7, without 110.4)",
+            "valid": true
+        }
+    },
+    "hyphenation": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "breaks words, e.g. \"para­\"",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "breaks words, e.g. \"para­\"",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "breaks words, e.g. \"para‐\"",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "breaks words, e.g. \"para-\"",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": false,
+            "note": "no word broken with a hyphen",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "no word broken with a hyphen",
+            "valid": true
+        }
+    },
+    "justify": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "6 full lines, ragged by up to 0.0pt",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "6 full lines, ragged by up to 0.0pt",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "6 full lines, ragged by up to 0.0pt",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "6 full lines, ragged by up to 0.3pt",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "2 full lines, ragged by up to 0.0pt",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "6 full lines, ragged by up to 0.0pt",
+            "valid": true
+        }
+    },
+    "page-numbers": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "Page 1 of 3 … Page 3 of 3",
+            "valid": true
+        }
+    },
+    "table-header": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "header on 2 of 2 pages",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "header on 2 of 2 pages",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "header on 3 of 3 pages",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "header on 3 of 3 pages",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "header on 2 of 2 pages",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "header on 3 of 3 pages",
+            "valid": true
+        }
+    },
+    "row-break": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "0 of 80 lines lost, 0 off the page, over 2 page(s)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "0 of 80 lines lost, 0 off the page, over 2 page(s)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "0 of 80 lines lost, 0 off the page, over 2 page(s)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": false,
+            "note": "0 of 80 lines lost, 0 off the page, over 1 page(s)",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "0 of 80 lines lost, 0 off the page, over 2 page(s)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "30 of 80 lines lost, 0 off the page, over 1 page(s)",
+            "valid": true
+        }
+    },
+    "spans": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "colspan ok, rowspan ok",
+            "valid": true
+        }
+    },
+    "links": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "clickable over the text",
+            "valid": true
+        }
+    },
+    "images": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "2 image(s), 1 soft mask(s)",
+            "valid": true
+        }
+    },
+    "svg": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "drawn, 0 raster image(s)",
+            "valid": true
+        }
+    },
+    "widows": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "5 paragraph(s) split, none leaving a line alone",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "5 paragraph(s) split, none leaving a line alone",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "4 paragraph(s) split, none leaving a line alone",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": false,
+            "note": "a 3-line paragraph (S3P12) splits 2 + 1",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": false,
+            "note": "a 3-line paragraph (S0P12) splits 1 + 2",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "a 3-line paragraph (S2P21) splits 2 + 1",
+            "valid": true
+        }
+    },
+    "copy-text": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "exact",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "exact",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "exact",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": false,
+            "note": "got \"The oﬃce staﬀ — Ægir, Zoë and François — aﬃrmed the AVATAR waﬄe.\"",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "exact",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "exact",
+            "valid": true
+        }
+    },
+    "rtl": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "reads right to left",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "reads right to left",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "reads right to left",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "reads right to left",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "reads right to left",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "laid out left to right",
+            "valid": true
+        }
+    },
+    "arabic": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "width 105.8pt (joined 105.8, isolated letters 166.6)",
+            "valid": true
+        },
+        "Typst": {
+            "ok": true,
+            "note": "width 105.8pt (joined 105.8, isolated letters 166.6)",
+            "valid": true
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "width 105.8pt (joined 105.8, isolated letters 166.6)",
+            "valid": true
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "width 90.5pt (joined 105.8, isolated letters 166.6), in its own Arabic font",
+            "valid": true
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "width 105.8pt (joined 105.8, isolated letters 166.6)",
+            "valid": true
+        },
+        "Dompdf": {
+            "ok": false,
+            "note": "width 166.7pt (joined 105.8, isolated letters 166.6)",
+            "valid": true
+        }
+    },
+    "valid": {
+        "YetiPDF Write": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        },
+        "Typst": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        },
+        "Chrome": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        },
+        "mPDF": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        },
+        "TCPDF": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        },
+        "Dompdf": {
+            "ok": true,
+            "note": "qpdf --check passes on every file"
+        }
+    }
+}

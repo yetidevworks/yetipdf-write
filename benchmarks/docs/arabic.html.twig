@@ -1,0 +1,38 @@
+{#- The Arabic benchmark report as HTML for Dompdf, mPDF and TCPDF (benchmarks/docs/arabic.json). -#}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>{{ d.title }}</title>
+<style>
+  @page { size: A4; margin: 56pt; }
+  body { font-family: 'DejaVu Sans', sans-serif; font-size: 11pt; color: #14161b; line-height: 1.45; margin: 0; direction: rtl; text-align: right; }
+  h1 { font-size: 20pt; font-weight: 700; margin: 0 0 6pt; }
+  .sub { font-size: 11pt; color: #4b5059; margin: 0; }
+  h2 { font-size: 14pt; font-weight: 700; margin: 18pt 0 8pt; }
+  p { margin: 0 0 9pt; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 9pt; }
+  th, td { padding: 4pt 6pt; text-align: right; }
+  th { font-weight: 700; }
+  tr:last-child td { border-bottom: 0.4pt solid #c9ccd3; }
+</style>
+</head>
+<body>
+  <h1>{{ d.title }}</h1>
+  <p class="sub">{{ d.subtitle }}</p>
+  {%- for s in d.sections %}
+  <h2>{{ s.title }}</h2>
+  {%- for p in s.paragraphs %}
+  <p>{{ p }}</p>
+  {%- endfor %}
+  {%- if s.table %}
+  <table>
+    <tr>{% for h in s.table.head %}<th>{{ h }}</th>{% endfor %}</tr>
+    {%- for r in s.table.rows %}
+    <tr>{% for v in r %}<td>{{ v }}</td>{% endfor %}</tr>
+    {%- endfor %}
+  </table>
+  {%- endif %}
+  {%- endfor %}
+</body>
+</html>

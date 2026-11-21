@@ -1,0 +1,348 @@
+<document font="Figtree" size="9pt" color="#14161b" numbers="tabular" leading="0.48em" par-spacing="0.6em"
+          title="Invoice QS-2026-0417 – Brightwater Outfitters" author="Quillmoor Studio">
+  <style name="eyebrow" size="6.6pt" weight="semibold" tracking="0.09em" color="#7a7f89" case="upper"/>
+
+  <page paper="a4" margin="44pt 46pt 60pt" header-ascent="14pt" footer-descent="14pt">    <header pages="not-first" size="7.4pt" color="#7a7f89">
+      <grid columns="1fr auto" align="bottom">
+        <cell weight="semibold" color="#4b5059">Quillmoor Studio</cell>
+        <cell align="right"><text weight="medium" color="#4b5059">Invoice QS-2026-0417</text><h size="5pt"/>·<h size="5pt"/>Brightwater Outfitters</cell>
+      </grid>
+      <v size="-2pt"/>
+      <line stroke="0.4pt #e3e5ea"/>
+    </header>
+    <footer size="6.8pt" color="#7a7f89">
+      <line stroke="0.4pt #e3e5ea" below="5pt"/>
+      <grid columns="1fr auto" column-gutter="24pt">
+        <cell color="#4b5059">Thank you for your business.<br/>Payment due within 30 days.</cell>
+        <cell align="right">
+          <text weight="medium" color="#4b5059">Page <page-number/> of <page-count/></text><br/>
+          Generated Nov 20, 2026<h size="4pt"/>·<h size="4pt"/><text size="5.8pt">Made with ChronoSlice</text>
+        </cell>
+      </grid>
+    </footer>
+  </page><grid columns="1fr auto" column-gutter="24pt" align="horizon">    <cell size="21pt" weight="bold" tracking="-0.015em">Quillmoor Studio</cell>    <cell align="right" size="7.6pt" color="#4b5059" leading="0.42em">Quillmoor Studio LLC<br/>88 Lantern Row<br/>Fernvale, OR 97399<br/>billing@quillmoor.example</cell>
+  </grid>
+  <v size="10pt"/>
+  <grid columns="72pt 1fr" rows="2.2pt" align="horizon">
+    <line stroke="2.2pt #0f766e"/>
+    <line stroke="0.5pt #e3e5ea"/>
+  </grid><v size="20pt"/>
+  <grid columns="1fr 200pt" column-gutter="24pt">
+    <cell>
+      <block class="eyebrow" color="#0d6b63" spacing="0pt">Invoice</block>
+      <v size="8pt"/>
+      <block spacing="0pt"><text size="24pt" weight="semibold" tracking="-0.015em">QS-2026-0417</text><h size="12pt"/><box baseline="-5pt" stroke="1.3pt #b3261e" radius="3pt" inset="4pt 7pt"><text size="9pt" weight="bold" tracking="0.16em" color="#b3261e" case="upper">Overdue</text></box></block>
+    </cell>
+    <cell>
+      <block class="eyebrow" spacing="0pt">Bill to</block>
+      <v size="7pt"/>
+      <block leading="0.46em" spacing="0pt">
+        <text size="10pt" weight="semibold">Brightwater Outfitters</text><br/><text size="8.4pt" color="#4b5059">Attn: Accounts Payable</text><br/><text size="8.4pt" color="#4b5059">2600 Riverside Parkway</text><br/><text size="8.4pt" color="#4b5059">Lakeport, WA 98012</text><br/><text size="8.4pt" color="#7a7f89">ap@brightwater.example</text></block>
+    </cell>
+  </grid><v size="16pt"/>
+  <block stroke="0.5pt #e3e5ea" radius="9pt" inset="2.5pt">
+    <block fill="#f5f6f8" radius="7pt" inset="10pt 14pt">
+      <grid columns="1fr 1fr 1.55fr 1.3fr "><cell inset="0pt 6pt 0pt 0pt" stroke-left="none">
+            <block class="eyebrow" spacing="0pt" color="#7a7f89">Issued</block>
+            <v size="8pt"/>
+            <block spacing="0pt" fit="shrink" size="12.5pt" weight="medium" color="#14161b">Oct 31, 2026</block>
+            <v size="5pt"/>
+            <block spacing="0pt" size="7pt" color="#7a7f89">&#160;</block>
+          </cell><cell inset="0pt 6pt 0pt 12pt" stroke-left="0.5pt #c9ccd3">
+            <block class="eyebrow" spacing="0pt" color="#7a7f89">Due</block>
+            <v size="8pt"/>
+            <block spacing="0pt" fit="shrink" size="12.5pt" weight="medium" color="#14161b">Nov 30, 2026</block>
+            <v size="5pt"/>
+            <block spacing="0pt" size="7pt" color="#7a7f89">Net 30</block>
+          </cell><cell inset="0pt 6pt 0pt 12pt" stroke-left="0.5pt #c9ccd3">
+            <block class="eyebrow" spacing="0pt" color="#7a7f89">Period</block>
+            <v size="8pt"/>
+            <block spacing="0pt" fit="shrink" size="12.5pt" weight="medium" color="#14161b">Oct 1 – Oct 31, 2026</block>
+            <v size="5pt"/>
+            <block spacing="0pt" size="7pt" color="#7a7f89">31 days</block>
+          </cell><cell inset="0pt 6pt 0pt 12pt" stroke-left="0.5pt #c9ccd3">
+            <block class="eyebrow" spacing="0pt" color="#b3261e">Amount due</block>
+            <v size="8pt"/>
+            <block spacing="0pt" fit="shrink" size="17pt" weight="semibold" color="#b3261e">$78,470.00</block>
+            <v size="5pt"/>
+            <block spacing="0pt" size="7pt" color="#7a7f89">USD</block>
+          </cell>      </grid>
+    </block>
+  </block><v size="20pt"/>
+  <table columns="1fr 64pt 74pt 82pt" inset="6.2pt 6pt">
+    <header class="eyebrow" inset="2pt 6pt 5pt" stroke-bottom="0.7pt #c9ccd3">
+      <cell stroke-bottom="0.7pt #c9ccd3">Description</cell>
+      <cell stroke-bottom="0.7pt #c9ccd3" align="right">Qty</cell>
+      <cell stroke-bottom="0.7pt #c9ccd3" align="right">Unit price</cell>
+      <cell stroke-bottom="0.7pt #c9ccd3" align="right">Amount</cell>
+    </header>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Storefront redesign</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">2.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$247.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Gift card checkout</block>        </cell>
+        <cell align="right" color="#4b5059">8.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$1,093.75</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Shipping rate rules</block>        </cell>
+        <cell align="right" color="#4b5059">2.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$360.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product search tuning</block>        </cell>
+        <cell align="right" color="#4b5059">1.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$157.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Email template refresh</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">4.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$531.25</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Payment retry handling</block>        </cell>
+        <cell align="right" color="#4b5059">9.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$1,520.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Monthly support plan</block>        </cell>
+        <cell align="right" color="#4b5059">29.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$2,655.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Page speed audit</block>        </cell>
+        <cell align="right" color="#4b5059">7.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$968.75</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product photo retouching</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">9.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$1,440.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Wholesale order form</block>        </cell>
+        <cell align="right" color="#4b5059">6.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$562.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Storefront redesign (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">12.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$1,500.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Gift card checkout (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">28.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$4,560.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Shipping rate rules (part 2)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">15.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$1,350.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product search tuning (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">27.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$3,437.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Email template refresh (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">22.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$3,520.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Payment retry handling (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">7.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$652.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Monthly support plan (part 2)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">17.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$2,125.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Page speed audit (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">7.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$1,160.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product photo retouching (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">2.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$202.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Wholesale order form (part 2)</block>        </cell>
+        <cell align="right" color="#4b5059">17.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$2,187.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Storefront redesign (part 3)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">28.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$4,520.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Gift card checkout (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">28.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$2,520.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Shipping rate rules (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">10.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$1,250.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product search tuning (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">25.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$4,080.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Email template refresh (part 3)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">20.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$1,822.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Payment retry handling (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">27.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$3,406.25</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Monthly support plan (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">29.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$4,760.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Page speed audit (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">12.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$1,102.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product photo retouching (part 3)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">20.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$2,500.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Wholesale order form (part 3)</block>        </cell>
+        <cell align="right" color="#4b5059">17.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$2,840.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Storefront redesign (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">9.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$877.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Gift card checkout (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">26.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$3,281.25</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Shipping rate rules (part 4)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">20.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$3,240.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product search tuning (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">29.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$2,655.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Email template refresh (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">14.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$1,843.75</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Payment retry handling (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">5.50<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$880.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Monthly support plan (part 4)</block><v size="3.6pt"/><block spacing="0pt" size="7.4pt" color="#7a7f89">Includes review, testing and launch support</block>        </cell>
+        <cell align="right" color="#4b5059">11.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$1,057.50</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Page speed audit (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">25.00<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$125.00</cell>
+        <cell align="right" weight="medium">$3,125.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row>
+        <cell>
+          <block spacing="0pt" weight="medium">Product photo retouching (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">3.25<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$160.00</cell>
+        <cell align="right" weight="medium">$520.00</cell>
+      </row><hline stroke="0.4pt #e3e5ea"/>      <row keep="with-next">
+        <cell>
+          <block spacing="0pt" weight="medium">Wholesale order form (part 4)</block>        </cell>
+        <cell align="right" color="#4b5059">21.75<h size="2.5pt"/><text size="7.6pt" color="#7a7f89">h</text></cell>
+        <cell align="right" color="#4b5059">$90.00</cell>
+        <cell align="right" weight="medium">$1,957.50</cell>
+      </row>    <hline stroke="0.7pt #c9ccd3"/>
+    <row>
+      <cell colspan="4" inset="12pt 6pt 0pt">
+        <grid columns="1fr 238pt" column-gutter="30pt">
+          <cell inset-top="4pt">              <block class="eyebrow" spacing="0pt">Notes</block>
+              <v size="7pt"/>
+              <block size="8.2pt" color="#4b5059" leading="0.5em">Hours are rounded to the nearest quarter hour.<br/>Questions? Reply to this email.</block>          </cell>
+          <cell size="8.8pt">
+            <table columns="1fr auto" inset="3.6pt 0pt">                <row>
+                  <cell color="#4b5059">Subtotal</cell>
+                  <cell align="right" inset-left="14pt">$78,470.00</cell>
+                </row>                <row>
+                  <cell color="#4b5059">Tax (0%)</cell>
+                  <cell align="right" inset-left="14pt">$0.00</cell>
+                </row><hline stroke="0.8pt #14161b"/>                <row weight="semibold" inset="6pt 0pt 4pt">
+                  <cell color="#14161b">Total</cell>
+                  <cell align="right" inset-left="14pt">$78,470.00</cell>
+                </row>            </table>
+            <v size="6pt"/>            <block stroke="0.5pt #e3e5ea" radius="8pt" inset="2.5pt">
+              <block fill="#f5f6f8" radius="6pt" inset="9pt 11pt">
+                <grid columns="1fr auto" column-gutter="10pt" align="horizon">
+                  <cell size="9.6pt" weight="semibold" color="#b3261e">Balance due</cell>
+                  <cell size="16pt" weight="bold" color="#b3261e" align="right">$78,470.00</cell>
+                </grid><v size="3pt"/><text size="7.2pt" color="#b3261e" weight="medium">Pay online at pay.example.com/i/qs0417</text>              </block>
+            </block>
+          </cell>
+        </grid>
+      </cell>
+    </row>
+  </table>
+</document>

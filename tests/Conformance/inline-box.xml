@@ -1,0 +1,1 @@
+<document font="Figtree" size="10pt" par-spacing="6pt" leading="4pt"><page paper="300pt 300pt" margin="10pt"/><block>Before <box inset="4pt" stroke="1pt" baseline="2pt">boxed</box> after <h size="10pt"/> gap <h size="1fr"/> end</block></document>

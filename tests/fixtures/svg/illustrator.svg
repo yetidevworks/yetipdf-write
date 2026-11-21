@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY st_brand "#0b6e4f">
+]>
+<svg version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 150" style="enable-background:new 0 0 300 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#08A045;}
+	.st1{fill:none;stroke:#073B3A;stroke-width:4;stroke-miterlimit:10;}
+	.st2, .st3 {fill:#FFFFFF;}
+	.st3{opacity:0.5;}
+	#Layer_1 .big{fill:#21D375}
+	rect.outline { fill: none; stroke: #6BBF59; stroke-width: 2 }
+	/* comment { fill: red } */
+	@media print { .st0 { fill: red } }
+	g > .child { fill: #DDB771 }
+</style>
+<rect x="5" y="5" class="outline" width="290" height="140"/>
+<circle class="st0" cx="75" cy="75" r="55"/>
+<path class="st2" d="M50,75l15,15l35-35l-7-7L65,76l-8-8L50,75z"/>
+<path class="st1" d="M150,30h120v90H150V30z"/>
+<circle class="st0 big" cx="210" cy="75" r="30"/>
+<circle class="st3" cx="210" cy="75" r="15"/>
+<g><rect class="child" x="160" y="40" width="20" height="20"/></g>
+<rect x="245" y="95" width="20" height="20" style="fill:&st_brand;"/>
+<rect x="245" y="40" width="20" height="20" class="st0" fill="red"/>
+</svg>

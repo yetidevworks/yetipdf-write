@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="200">
+  <g fill="none" stroke="#2c3e50" stroke-width="10">
+    <polyline points="20,50 40,20 60,50" stroke-linejoin="miter"/>
+    <polyline points="80,50 100,20 120,50" stroke-linejoin="round"/>
+    <polyline points="140,50 160,20 180,50" stroke-linejoin="bevel"/>
+    <line x1="20" y1="80" x2="80" y2="80" stroke-linecap="butt"/>
+    <line x1="20" y1="100" x2="80" y2="100" stroke-linecap="round"/>
+    <line x1="20" y1="120" x2="80" y2="120" stroke-linecap="square"/>
+    <polyline points="110,90 150,80 190,90" stroke-width="6" stroke-miterlimit="1"/>
+  </g>
+  <g fill="none" stroke-width="3">
+    <line x1="100" y1="110" x2="210" y2="110" stroke="#e74c3c" stroke-dasharray="10 5"/>
+    <line x1="100" y1="125" x2="210" y2="125" stroke="#27ae60" stroke-dasharray="10,5,2" stroke-dashoffset="4"/>
+    <line x1="100" y1="140" x2="210" y2="140" stroke="#2980b9" stroke-dasharray="1 6" stroke-linecap="round" stroke-width="5"/>
+    <circle cx="50" cy="165" r="25" stroke="#8e44ad" stroke-dasharray="15 6"/>
+    <rect x="110" y="150" width="90" height="40" rx="10" stroke="#d35400" stroke-dasharray="20 10" stroke-width="4" stroke-opacity="0.6"/>
+  </g>
+  <polygon points="190,20 210,40 190,60 170,40" fill="#f1c40f" stroke="#7d6608" stroke-width="3" stroke-linejoin="round"/>
+</svg>

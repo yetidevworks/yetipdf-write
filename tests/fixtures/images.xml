@@ -1,0 +1,13 @@
+<document font="Figtree" size="8pt">
+  <page paper="520pt 360pt" margin="20pt"/>
+  <grid columns="1fr 1fr 1fr 1fr" gutter="8pt">
+    <block fill="#f7d9e3" inset="6pt"><image src="rgba.png" width="100%" height="70pt"/><v size="3pt"/>rgba.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="rgb.png" width="100%" height="70pt"/><v size="3pt"/>rgb.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="palette.png" width="100%" height="70pt"/><v size="3pt"/>palette.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="gray-alpha.png" width="100%" height="70pt"/><v size="3pt"/>gray-alpha.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="rgb16.png" width="100%" height="70pt"/><v size="3pt"/>rgb16.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="colorkey.png" width="100%" height="70pt"/><v size="3pt"/>colorkey.png</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="rgb.jpg" width="100%" height="70pt"/><v size="3pt"/>rgb.jpg</block>
+    <block fill="#f7d9e3" inset="6pt"><image src="cmyk.jpg" width="100%" height="70pt"/><v size="3pt"/>cmyk.jpg</block>
+  </grid>
+</document>

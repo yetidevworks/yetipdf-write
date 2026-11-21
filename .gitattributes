@@ -1,0 +1,8 @@
+/tests export-ignore
+/benchmarks export-ignore
+/examples export-ignore
+/phpunit.xml.dist export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/fonts/*.ttf binary
+/docs export-ignore

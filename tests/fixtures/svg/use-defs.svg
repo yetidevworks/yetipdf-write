@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220" height="160">
+  <defs>
+    <g id="star"><path d="M0,-20 L5.9,-8.1 19,-6.2 9.5,3.1 11.8,16.2 0,10 -11.8,16.2 -9.5,3.1 -19,-6.2 -5.9,-8.1Z"/></g>
+    <symbol id="icon" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <rect id="box" width="30" height="30" rx="4"/>
+  </defs>
+  <use href="#star" x="30" y="30" fill="#f1c40f"/>
+  <use xlink:href="#star" transform="translate(80 30) scale(1.2)" fill="#e67e22" stroke="#000"/>
+  <use href="#star" x="140" y="30" style="fill:#9b59b6" opacity="0.5"/>
+  <use href="#icon" x="10" y="70" width="48" height="48" color="#27ae60"/>
+  <use href="#icon" x="70" y="70" width="80" height="48" style="color:#c0392b"/>
+  <use href="#box" x="160" y="70" fill="#2980b9"/>
+  <use href="#box" x="160" y="110" fill="#16a085" transform="rotate(10 175 125)"/>
+</svg>

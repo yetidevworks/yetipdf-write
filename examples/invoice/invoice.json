@@ -1,0 +1,497 @@
+{
+    "number": "QS-2026-0417",
+    "client": "Brightwater Outfitters",
+    "paper": "a4",
+    "generated": "Nov 20, 2026",
+    "brand": {
+        "name": "Quillmoor Studio",
+        "logo": "logo.svg",
+        "accent": "#0f766e",
+        "accent_text": "#0d6b63",
+        "details": [
+            "Quillmoor Studio LLC",
+            "88 Lantern Row",
+            "Fernvale, OR 97399",
+            "billing@quillmoor.example"
+        ],
+        "note": [
+            "Thank you for your business.",
+            "Payment due within 30 days."
+        ]
+    },
+    "bill_to": [
+        "Brightwater Outfitters",
+        "Attn: Accounts Payable",
+        "2600 Riverside Parkway",
+        "Lakeport, WA 98012"
+    ],
+    "email": "ap@brightwater.example",
+    "mark": {
+        "label": "Overdue",
+        "tone": "overdue"
+    },
+    "facts": [
+        {
+            "label": "Issued",
+            "value": "Oct 31, 2026",
+            "sub": "",
+            "strong": false,
+            "tone": null
+        },
+        {
+            "label": "Due",
+            "value": "Nov 30, 2026",
+            "sub": "Net 30",
+            "strong": false,
+            "tone": null
+        },
+        {
+            "label": "Period",
+            "value": "Oct 1 – Oct 31, 2026",
+            "sub": "31 days",
+            "strong": false,
+            "tone": null
+        },
+        {
+            "label": "Amount due",
+            "value": "$78,470.00",
+            "sub": "USD",
+            "strong": true,
+            "tone": "overdue"
+        }
+    ],
+    "chart": {
+        "title": "Hours by week",
+        "total": "624.75 hours",
+        "src": "chart.svg",
+        "weeks": [
+            {
+                "label": "Oct 1–4",
+                "hours": "66.50 h"
+            },
+            {
+                "label": "Oct 5–11",
+                "hours": "127.50 h"
+            },
+            {
+                "label": "Oct 12–18",
+                "hours": "135.75 h"
+            },
+            {
+                "label": "Oct 19–25",
+                "hours": "163.25 h"
+            },
+            {
+                "label": "Oct 26–31",
+                "hours": "131.75 h"
+            }
+        ],
+        "legend": [
+            {
+                "label": "Design",
+                "color": "#0f766e",
+                "hours": "148.50 h"
+            },
+            {
+                "label": "Development",
+                "color": "#4fae9f",
+                "hours": "336.00 h"
+            },
+            {
+                "label": "Support",
+                "color": "#b5ddd5",
+                "hours": "140.25 h"
+            }
+        ]
+    },
+    "lines": [
+        {
+            "description": "Storefront redesign",
+            "detail": "Includes review, testing and launch support",
+            "qty": "2.75",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$247.50",
+            "raw": 247.5
+        },
+        {
+            "description": "Gift card checkout",
+            "detail": null,
+            "qty": "8.75",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$1,093.75",
+            "raw": 1093.75
+        },
+        {
+            "description": "Shipping rate rules",
+            "detail": null,
+            "qty": "2.25",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$360.00",
+            "raw": 360
+        },
+        {
+            "description": "Product search tuning",
+            "detail": null,
+            "qty": "1.75",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$157.50",
+            "raw": 157.5
+        },
+        {
+            "description": "Email template refresh",
+            "detail": "Includes review, testing and launch support",
+            "qty": "4.25",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$531.25",
+            "raw": 531.25
+        },
+        {
+            "description": "Payment retry handling",
+            "detail": null,
+            "qty": "9.50",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$1,520.00",
+            "raw": 1520
+        },
+        {
+            "description": "Monthly support plan",
+            "detail": null,
+            "qty": "29.50",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$2,655.00",
+            "raw": 2655
+        },
+        {
+            "description": "Page speed audit",
+            "detail": null,
+            "qty": "7.75",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$968.75",
+            "raw": 968.75
+        },
+        {
+            "description": "Product photo retouching",
+            "detail": "Includes review, testing and launch support",
+            "qty": "9.00",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$1,440.00",
+            "raw": 1440
+        },
+        {
+            "description": "Wholesale order form",
+            "detail": null,
+            "qty": "6.25",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$562.50",
+            "raw": 562.5
+        },
+        {
+            "description": "Storefront redesign (part 2)",
+            "detail": null,
+            "qty": "12.00",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$1,500.00",
+            "raw": 1500
+        },
+        {
+            "description": "Gift card checkout (part 2)",
+            "detail": null,
+            "qty": "28.50",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$4,560.00",
+            "raw": 4560
+        },
+        {
+            "description": "Shipping rate rules (part 2)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "15.00",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$1,350.00",
+            "raw": 1350
+        },
+        {
+            "description": "Product search tuning (part 2)",
+            "detail": null,
+            "qty": "27.50",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$3,437.50",
+            "raw": 3437.5
+        },
+        {
+            "description": "Email template refresh (part 2)",
+            "detail": null,
+            "qty": "22.00",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$3,520.00",
+            "raw": 3520
+        },
+        {
+            "description": "Payment retry handling (part 2)",
+            "detail": null,
+            "qty": "7.25",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$652.50",
+            "raw": 652.5
+        },
+        {
+            "description": "Monthly support plan (part 2)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "17.00",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$2,125.00",
+            "raw": 2125
+        },
+        {
+            "description": "Page speed audit (part 2)",
+            "detail": null,
+            "qty": "7.25",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$1,160.00",
+            "raw": 1160
+        },
+        {
+            "description": "Product photo retouching (part 2)",
+            "detail": null,
+            "qty": "2.25",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$202.50",
+            "raw": 202.5
+        },
+        {
+            "description": "Wholesale order form (part 2)",
+            "detail": null,
+            "qty": "17.50",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$2,187.50",
+            "raw": 2187.5
+        },
+        {
+            "description": "Storefront redesign (part 3)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "28.25",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$4,520.00",
+            "raw": 4520
+        },
+        {
+            "description": "Gift card checkout (part 3)",
+            "detail": null,
+            "qty": "28.00",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$2,520.00",
+            "raw": 2520
+        },
+        {
+            "description": "Shipping rate rules (part 3)",
+            "detail": null,
+            "qty": "10.00",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$1,250.00",
+            "raw": 1250
+        },
+        {
+            "description": "Product search tuning (part 3)",
+            "detail": null,
+            "qty": "25.50",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$4,080.00",
+            "raw": 4080
+        },
+        {
+            "description": "Email template refresh (part 3)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "20.25",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$1,822.50",
+            "raw": 1822.5
+        },
+        {
+            "description": "Payment retry handling (part 3)",
+            "detail": null,
+            "qty": "27.25",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$3,406.25",
+            "raw": 3406.25
+        },
+        {
+            "description": "Monthly support plan (part 3)",
+            "detail": null,
+            "qty": "29.75",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$4,760.00",
+            "raw": 4760
+        },
+        {
+            "description": "Page speed audit (part 3)",
+            "detail": null,
+            "qty": "12.25",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$1,102.50",
+            "raw": 1102.5
+        },
+        {
+            "description": "Product photo retouching (part 3)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "20.00",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$2,500.00",
+            "raw": 2500
+        },
+        {
+            "description": "Wholesale order form (part 3)",
+            "detail": null,
+            "qty": "17.75",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$2,840.00",
+            "raw": 2840
+        },
+        {
+            "description": "Storefront redesign (part 4)",
+            "detail": null,
+            "qty": "9.75",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$877.50",
+            "raw": 877.5
+        },
+        {
+            "description": "Gift card checkout (part 4)",
+            "detail": null,
+            "qty": "26.25",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$3,281.25",
+            "raw": 3281.25
+        },
+        {
+            "description": "Shipping rate rules (part 4)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "20.25",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$3,240.00",
+            "raw": 3240
+        },
+        {
+            "description": "Product search tuning (part 4)",
+            "detail": null,
+            "qty": "29.50",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$2,655.00",
+            "raw": 2655
+        },
+        {
+            "description": "Email template refresh (part 4)",
+            "detail": null,
+            "qty": "14.75",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$1,843.75",
+            "raw": 1843.75
+        },
+        {
+            "description": "Payment retry handling (part 4)",
+            "detail": null,
+            "qty": "5.50",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$880.00",
+            "raw": 880
+        },
+        {
+            "description": "Monthly support plan (part 4)",
+            "detail": "Includes review, testing and launch support",
+            "qty": "11.75",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$1,057.50",
+            "raw": 1057.5
+        },
+        {
+            "description": "Page speed audit (part 4)",
+            "detail": null,
+            "qty": "25.00",
+            "unit": "h",
+            "price": "$125.00",
+            "amount": "$3,125.00",
+            "raw": 3125
+        },
+        {
+            "description": "Product photo retouching (part 4)",
+            "detail": null,
+            "qty": "3.25",
+            "unit": "h",
+            "price": "$160.00",
+            "amount": "$520.00",
+            "raw": 520
+        },
+        {
+            "description": "Wholesale order form (part 4)",
+            "detail": null,
+            "qty": "21.75",
+            "unit": "h",
+            "price": "$90.00",
+            "amount": "$1,957.50",
+            "raw": 1957.5
+        }
+    ],
+    "totals": [
+        {
+            "label": "Subtotal",
+            "value": "$78,470.00",
+            "kind": "line"
+        },
+        {
+            "label": "Tax (0%)",
+            "value": "$0.00",
+            "kind": "line"
+        },
+        {
+            "label": "Total",
+            "value": "$78,470.00",
+            "kind": "total"
+        }
+    ],
+    "balance": {
+        "label": "Balance due",
+        "value": "$78,470.00",
+        "sub": "Pay online at pay.example.com/i/qs0417",
+        "tone": "overdue"
+    },
+    "notes": [
+        "Hours are rounded to the nearest quarter hour.",
+        "Questions? Reply to this email."
+    ],
+    "watermark": null
+}

@@ -1,0 +1,39 @@
+{
+    "name": "yetidevworks/yetipdf-write",
+    "description": "The fastest PDF generation for PHP: pure PHP, no dependencies, with a layout model inspired by Typst",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["pdf", "generation", "layout", "invoice", "typesetting"],
+    "authors": [
+        {
+            "name": "Yetidevworks",
+            "email": "info@yetidevworks.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "ext-zlib": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "YetiPdf\\Write\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YetiPdf\\Write\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

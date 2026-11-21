@@ -1,0 +1,13 @@
+{
+    "name": "yetidevworks/yetipdf-write-benchmarks",
+    "description": "Compares YetiPDF Write with Typst, mPDF, TCPDF and Dompdf on the same documents",
+    "require": {
+        "dompdf/dompdf": "^3.0",
+        "mpdf/mpdf": "^8.2",
+        "tecnickcom/tcpdf": "^6.7",
+        "twig/twig": "^3.0"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

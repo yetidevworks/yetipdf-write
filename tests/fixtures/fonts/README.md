@@ -1,0 +1,1 @@
+DejaVuSans.ttf is from the DejaVu fonts project (https://dejavu-fonts.github.io), under the DejaVu fonts license (Bitstream Vera license with public-domain changes), which allows redistribution. It's here to test font fallback for text Figtree can't set (Greek, Cyrillic, symbols).
