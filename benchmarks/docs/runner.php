@@ -13,7 +13,7 @@ $doc = $twig->render($engine === 'yetipdf' ? "$docName.xml.twig" : "$docName.htm
 $dejavu = $root . '/tests/fixtures/fonts';
 
 $render = match ($engine) {
-    'yetipdf' => fn () => (new YetiPdf\Write\YetiPdf(fonts: [$fonts, $dejavu], cache: $cache . '/yetipdf'))->render($doc),
+    'yetipdf' => fn () => (new YetiPdf\Write\YetiPdfWrite(fonts: [$fonts, $dejavu], cache: $cache . '/yetipdf'))->render($doc),
     'dompdf' => function () use ($doc, $fonts, $cache, $arabic) {
         $o = new Dompdf\Options();
         $o->setChroot([$fonts, __DIR__]);

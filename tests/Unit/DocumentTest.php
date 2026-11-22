@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace YetiPdf\Write\Tests\Unit;
 
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 use YetiPdf\Write\PdfException;
 use PHPUnit\Framework\TestCase;
 
@@ -12,9 +12,9 @@ final class DocumentTest extends TestCase
 {
     private const ROOT = __DIR__ . '/../..';
 
-    private function yetipdf(): YetiPdf
+    private function yetipdf(): YetiPdfWrite
     {
-        return new YetiPdf(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images']);
+        return new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images']);
     }
 
     private function render(string $body, string $attrs = ''): string
@@ -67,13 +67,13 @@ final class DocumentTest extends TestCase
     public function testImagesNeedAnAssetDirectory(): void
     {
         $this->expectExceptionMessageMatches('/no asset directories/');
-        (new YetiPdf(fonts: [self::ROOT . '/fonts']))->render('<document><image src="rgba.png"/></document>');
+        (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->render('<document><image src="rgba.png"/></document>');
     }
 
     public function testDataUriAndRegisteredImages(): void
     {
         $png = file_get_contents(self::ROOT . '/tests/fixtures/images/rgb.png');
-        $p = (new YetiPdf(fonts: [self::ROOT . '/fonts']))->registerImage('logo', $png);
+        $p = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->registerImage('logo', $png);
         $pdf = $p->render('<document><image src="@logo" width="40pt"/><image src="data:image/png;base64,' . base64_encode($png) . '" width="40pt"/></document>');
         $this->assertSame(1, preg_match_all('/\/Subtype \/Image/', $pdf), 'the same image bytes are embedded once');
     }
@@ -81,7 +81,7 @@ final class DocumentTest extends TestCase
     public function testImageSizing(): void
     {
         // rgba.png is 240×120 px at 72 dpi: 240×120 pt naturally.
-        $p = new YetiPdf(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images'], compress: false);
+        $p = new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images'], compress: false);
         $pdf = $p->render('<document font="Figtree"><image src="rgba.png" height="60pt" max-width="80pt"/><image src="rgba.png" width="100pt"/></document>');
         preg_match_all('/q ([\d.]+) 0 0 ([\d.]+) [\d.]+ [\d.]+ cm \/Im1 Do Q/', $pdf, $m, PREG_SET_ORDER);
         $this->assertSame(['80', '40'], [$m[0][1], $m[0][2]], 'height 60pt would be 120pt wide; max-width brings it to 80×40');
@@ -90,7 +90,7 @@ final class DocumentTest extends TestCase
 
     public function testLinksBecomeAnnotations(): void
     {
-        $p = new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false);
+        $p = new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false);
         $pdf = $p->render('<document>See <link href="https://getgrav.org">the Grav <b>website</b></link> or <a href="mailto:a@b.c">mail</a>.</document>');
         preg_match_all('/\/Subtype \/Link \/Rect \[([\d. ]+)\].*?\/URI <([0-9a-f]+)>/', $pdf, $m, PREG_SET_ORDER);
         $this->assertCount(2, $m, 'one area per link, even across style changes');
@@ -141,7 +141,7 @@ final class DocumentTest extends TestCase
     public function testRuleAfterTheLastRowClosesEveryPage(): void
     {
         $rows = implode('', array_map(fn ($i) => "<row><cell>ROW$i</cell></row>", range(1, 15)));
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="10pt" leading="4pt"><page paper="200pt 120pt" margin="10pt"/>'
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="10pt" leading="4pt"><page paper="200pt 120pt" margin="10pt"/>'
             . "<table columns=\"1fr\" inset=\"2pt\" stroke=\"none\">$rows<hline stroke=\"2pt #0000ff\"/></table></document>");
         $this->assertSame(2, preg_match_all('/0 0 1 RG/', $pdf), 'one blue rule per page');
     }
@@ -155,7 +155,7 @@ final class DocumentTest extends TestCase
             $tiff = $order . pack($s, 42) . pack($l, 8) . pack($s, 1) . pack($s, 0x112) . pack($s, 3) . pack($l, 1) . pack($s, 6) . "\0\0" . pack($l, 0);
             $exif = "Exif\0\0" . $tiff;
             $turned = substr($jpeg, 0, 2) . "\xFF\xE1" . pack('n', strlen($exif) + 2) . $exif . substr($jpeg, 2);
-            $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('t', $turned)->render('<document><image src="@t"/></document>');
+            $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('t', $turned)->render('<document><image src="@t"/></document>');
             $this->assertStringContainsString(sprintf('%s 0 0 %s ', $h, $w), $pdf, "$order: natural size swaps");
             $this->assertStringContainsString(' cm 0 -1 1 0 0 1 cm /', $pdf, "$order: drawn turned");
         }
@@ -163,7 +163,7 @@ final class DocumentTest extends TestCase
 
     public function testRulesStopAtRowSpans(): void
     {
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="9pt"><page paper="200pt 80pt" margin="10pt"/>'
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="9pt"><page paper="200pt 80pt" margin="10pt"/>'
             . '<table columns="1fr 1fr 1fr" inset="2pt" stroke="none"><cell>A</cell><cell rowspan="2">SPAN</cell><cell>C</cell><hline stroke="2pt red"/><cell>D</cell><cell>F</cell></table></document>');
         preg_match_all('/(\S+) (\S+) m (\S+) \S+ l S/', $pdf, $m, PREG_SET_ORDER);
         $this->assertSame([['10', '70'], ['130', '190']], array_map(fn ($l) => [$l[1], $l[3]], $m));
@@ -171,7 +171,7 @@ final class DocumentTest extends TestCase
 
     public function testRuleResumesAtTheSpanningCellsEdge(): void
     {
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="10pt"><page paper="240pt 100pt" margin="10pt"/>'
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->render('<document font="Figtree" size="10pt"><page paper="240pt 100pt" margin="10pt"/>'
             . '<table columns="40pt 40pt 40pt" column-gutter="10pt" inset="2pt" stroke="none"><cell rowspan="2">SPAN</cell><cell>B</cell><cell>C</cell><hline stroke="2pt red"/><cell>E</cell><cell>F</cell></table></document>');
         preg_match_all('/(\S+) (\S+) m (\S+) \S+ l S/', $pdf, $m, PREG_SET_ORDER);
         $this->assertSame([['50', '150']], array_map(fn ($l) => [$l[1], $l[3]], $m));
@@ -225,7 +225,7 @@ final class DocumentTest extends TestCase
     }
     private function rtl(string $body): string
     {
-        return (new YetiPdf(fonts: [self::ROOT . '/fonts', self::ROOT . '/tests/fixtures/fonts'], compress: false))
+        return (new YetiPdfWrite(fonts: [self::ROOT . '/fonts', self::ROOT . '/tests/fixtures/fonts'], compress: false))
             ->render('<document font="DejaVu Sans" size="10pt" lang="he"><page paper="240pt 100pt" margin="10pt"/>' . $body . '</document>');
     }
 

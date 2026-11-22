@@ -161,7 +161,7 @@ final class Out
     /** Widths of $text in DejaVu Sans at 40pt: [with the feature, without] (kerning, or ligatures). */
     public static function widths(string $text, bool $ligatures): array
     {
-        $face = (new YetiPdf\Write\YetiPdf(fonts: [dirname(__DIR__, 2) . '/tests/fixtures/fonts']))->fonts()->faces('DejaVu Sans', 400, false)[0];
+        $face = (new YetiPdf\Write\YetiPdfWrite(fonts: [dirname(__DIR__, 2) . '/tests/fixtures/fonts']))->fonts()->faces('DejaVu Sans', 400, false)[0];
         $width = function (array $features, bool $kern) use ($face, $text) {
             $g = $face->glyphs($text, $features);
             $w = 0;
@@ -198,7 +198,7 @@ $engines = [
     'YetiPDF Write' => function (array $case) use ($fonts, $dejavu, $assets) {
         $page = $case['yetipdf_page'] ?? '<page paper="a4" margin="40pt"/>';
         $xml = '<document font="Figtree, DejaVu Sans" size="10pt" par-spacing="6pt">' . $page . $case['yetipdf'] . '</document>';
-        return (new YetiPdf\Write\YetiPdf(fonts: [$fonts, $dejavu], assets: [$assets]))->render($xml);
+        return (new YetiPdf\Write\YetiPdfWrite(fonts: [$fonts, $dejavu], assets: [$assets]))->render($xml);
     },
     'Typst' => function (array $case, string $name) use ($fonts, $dejavu, $here, $out) {
         $typ = "#set page(paper: \"a4\", margin: 40pt)\n" . ($case['typst_page'] ?? '') . "\n#set text(font: (\"Figtree\", \"DejaVu Sans\"), size: 10pt)\n#set par(spacing: 6pt)\n"

@@ -15,9 +15,9 @@ use YetiPdf\Write\Pdf\PdfWriter;
 /**
  * Renders YetiPDF markup to PDF.
  *
- *   $pdf = (new YetiPdf(fonts: [__DIR__ . '/fonts'], assets: [$imageDir], cache: $cacheDir))->render($markup);
+ *   $pdf = (new YetiPdfWrite(fonts: [__DIR__ . '/fonts'], assets: [$imageDir], cache: $cacheDir))->render($markup);
  */
-final class YetiPdf
+final class YetiPdfWrite
 {
     private const PAPER = [
         'a2' => [1190.55, 1683.78], 'a3' => [841.89, 1190.55], 'a4' => [595.28, 841.89], 'a5' => [419.53, 595.28], 'a6' => [297.64, 419.53],

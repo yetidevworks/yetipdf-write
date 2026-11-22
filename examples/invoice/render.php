@@ -14,7 +14,7 @@ $t0 = hrtime(true);
 $twig = new Twig\Environment(new Twig\Loader\FilesystemLoader(__DIR__), ['autoescape' => 'html', 'cache' => $root . '/cache/twig', 'auto_reload' => true]);
 $markup = $twig->render('invoice.xml.twig', ['d' => $data]);
 $t1 = hrtime(true);
-$pdf = (new YetiPdf\Write\YetiPdf(fonts: [$root . '/fonts'], assets: [__DIR__], cache: $root . '/cache'))->render($markup);
+$pdf = (new YetiPdf\Write\YetiPdfWrite(fonts: [$root . '/fonts'], assets: [__DIR__], cache: $root . '/cache'))->render($markup);
 $t2 = hrtime(true);
 
 $out = $argv[1] ?? $root . '/out/invoice.pdf';

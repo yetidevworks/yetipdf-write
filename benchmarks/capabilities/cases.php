@@ -305,7 +305,7 @@ return [
             if ($w === null) {
                 return [false, 'no text found'];
             }
-            $face = (new YetiPdf\Write\YetiPdf(fonts: [dirname(__DIR__, 2) . '/tests/fixtures/fonts']))->fonts()->faces('DejaVu Sans', 400, false)[0];
+            $face = (new YetiPdf\Write\YetiPdfWrite(fonts: [dirname(__DIR__, 2) . '/tests/fixtures/fonts']))->fonts()->faces('DejaVu Sans', 400, false)[0];
             $joined = (new YetiPdf\Write\Layout\Layouter(new YetiPdf\Write\Font\FontBook(null), []))->glyphRun($face, 'بالعالم', 40, [0, 0, 0], 0.0, [], 1, 'ar')->width;
             $isolated = 0;
             foreach (mb_str_split('بالعالم') as $ch) {

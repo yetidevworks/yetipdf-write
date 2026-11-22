@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace YetiPdf\Write\Tests\Support;
 
 use YetiPdf\Write\Image\ImageLoader;
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 
 /**
  * Pixel comparisons for the SVG tests: each fixture is drawn by YetiPDF Write and by Typst (resvg) on
@@ -32,7 +32,7 @@ final class Raster
     public static function yetipdf(string $svg, string $out): void
     {
         [$w, $h] = self::pageSize($svg);
-        $pdf = (new YetiPdf(fonts: [dirname(__DIR__, 2) . '/fonts'], assets: [dirname($svg)]))->render(sprintf(
+        $pdf = (new YetiPdfWrite(fonts: [dirname(__DIR__, 2) . '/fonts'], assets: [dirname($svg)]))->render(sprintf(
             '<document><page paper="%spt %spt" margin="0pt"/><image src="%s" width="%spt"/></document>', $w, $h, basename($svg), $w));
         file_put_contents($out, $pdf);
     }

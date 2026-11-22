@@ -18,6 +18,8 @@ composer require yetidevworks/yetipdf-write
 
 You need **PHP 8.3** or newer, with the `mbstring`, `zlib` and `dom` extensions.
 
+In 0.1.0 the class you render with was called `YetiPdf`. Since 0.2.0 it's `YetiPdfWrite`, so it can sit next to YetiPDF Read's `YetiPdfRead` without renaming either one.
+
 ## How it works
 
 You write a template in Twig (or anything that outputs text), producing YetiPDF markup: plain XML elements for layout. Twig does the loops, conditions and escaping; YetiPDF Write does the layout and writes the PDF.
@@ -41,9 +43,9 @@ You write a template in Twig (or anything that outputs text), producing YetiPDF 
 ```
 
 ```php
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 
-$yetipdf = new YetiPdf(fonts: [__DIR__ . '/fonts'], assets: [__DIR__ . '/images'], cache: $cacheDir);
+$yetipdf = new YetiPdfWrite(fonts: [__DIR__ . '/fonts'], assets: [__DIR__ . '/images'], cache: $cacheDir);
 $pdf = $yetipdf->render($markup);
 ```
 

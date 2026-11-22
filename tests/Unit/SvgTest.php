@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace YetiPdf\Write\Tests\Unit;
 
 use YetiPdf\Write\Layout\Frame;
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 use YetiPdf\Write\PdfException;
 use YetiPdf\Write\Svg\Color;
 use YetiPdf\Write\Svg\Geometry;
@@ -200,7 +200,7 @@ final class SvgTest extends TestCase
             . '<use href="other.svg#a"/><use xlink:href="http://example.com/a.svg#b"/><rect width="1" height="1" fill="url(other.svg#g) #f00"/>'
             . '<style>@import url("http://example.com/x.css");</style><text x="1" y="1">text is skipped</text><foreignObject><div/></foreignObject><script>x</script>');
         $this->assertSame([[1.0, 0.0, 0.0]], self::fills($svg));
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], assets: [$dir]))->registerImage('s', $svg)->render('<document><image src="@s"/></document>');
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], assets: [$dir]))->registerImage('s', $svg)->render('<document><image src="@s"/></document>');
         $this->assertSame(0, preg_match('#/Subtype /Image#', $pdf));
     }
 
@@ -222,7 +222,7 @@ final class SvgTest extends TestCase
             . '<g transform="scale(0)"><rect width="1" height="1"/></g><rect width="1" height="1" stroke="red" stroke-dasharray="-1 2"/>'
             . '<linearGradient id="g"/><rect width="1" height="1" fill="url(#g)"/><unknown><rect width="1" height="1"/></unknown>'
             . '<svg viewBox="0 0 0 0"><rect width="1" height="1"/></svg><clipPath id="c"/><rect width="1" height="1" clip-path="url(#c)"/>', 'viewBox="0 0 0 0"');
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('s', $svg)->render('<document><image src="@s" width="50pt"/></document>');
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('s', $svg)->render('<document><image src="@s" width="50pt"/></document>');
         $this->assertStringStartsWith('%PDF-1.7', $pdf);
         $this->assertDoesNotMatchRegularExpression('/\b(inf|nan)\b/i', $pdf);
     }
@@ -230,7 +230,7 @@ final class SvgTest extends TestCase
     public function testNotAnSvg(): void
     {
         $this->expectExceptionMessageMatches('/Invalid SVG/');
-        (new YetiPdf(fonts: [self::ROOT . '/fonts']))->registerImage('s', '<svg><rect></svg>')->render('<document><image src="@s"/></document>');
+        (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->registerImage('s', '<svg><rect></svg>')->render('<document><image src="@s"/></document>');
     }
 
     // ------------------------------------------------------------------ writer
@@ -238,7 +238,7 @@ final class SvgTest extends TestCase
     public function testSameSvgIsEmbeddedOnceAsAForm(): void
     {
         $svg = file_get_contents(self::FIXTURES . '/logo-figma.svg');
-        $p = (new YetiPdf(fonts: [self::ROOT . '/fonts'], assets: [self::FIXTURES], compress: false))->registerImage('logo', $svg);
+        $p = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], assets: [self::FIXTURES], compress: false))->registerImage('logo', $svg);
         $pdf = $p->render('<document><image src="@logo" width="40pt"/><image src="@logo" height="10pt"/>'
             . '<image src="data:image/svg+xml;base64,' . base64_encode($svg) . '" width="60pt"/>'
             . '<image src="data:image/svg+xml,' . rawurlencode($svg) . '" width="60pt"/><image src="logo-inkscape.svg" width="50pt"/></document>');
@@ -249,7 +249,7 @@ final class SvgTest extends TestCase
     public function testImageSizingMatchesRasterImages(): void
     {
         $svg = self::svg('<rect width="200" height="100" fill="#f00"/>', 'width="200" height="100"');
-        $p = (new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('s', $svg);
+        $p = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false))->registerImage('s', $svg);
         $pdf = $p->render('<document><page paper="300pt 300pt" margin="0pt"/><image src="@s"/><image src="@s" height="30pt"/>'
             . '<image src="@s" width="100pt" height="100pt" fit="cover"/><image src="@s" max-width="50pt"/></document>');
         preg_match_all('#([\d.]+) 0 0 ([\d.]+) [\d.-]+ [\d.-]+ cm /Fm1 Do#', $pdf, $m);

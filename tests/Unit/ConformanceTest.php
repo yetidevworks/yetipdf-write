@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace YetiPdf\Write\Tests\Unit;
 
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 use YetiPdf\Write\Tests\Support\Raster;
 use YetiPdf\Write\Tests\Support\Words;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -38,7 +38,7 @@ final class ConformanceTest extends TestCase
         $json = json_decode(file_get_contents("$dir/$name.json"), true);
         $expected = $json['pages'];
 
-        $yetipdf = new YetiPdf(fonts: [$root . '/fonts', $root . '/tests/fixtures/fonts'], assets: [$root . '/tests/fixtures/images'], cache: sys_get_temp_dir() . '/yetipdf-test-cache');
+        $yetipdf = new YetiPdfWrite(fonts: [$root . '/fonts', $root . '/tests/fixtures/fonts'], assets: [$root . '/tests/fixtures/images'], cache: sys_get_temp_dir() . '/yetipdf-test-cache');
         $pdf = sys_get_temp_dir() . "/yetipdf-test-$name.pdf";
         file_put_contents($pdf, $yetipdf->render(file_get_contents("$dir/$name.xml")));
         $actual = Words::read($pdf);

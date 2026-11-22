@@ -7,7 +7,7 @@ namespace YetiPdf\Write\Tests\Unit;
 use YetiPdf\Write\Font\FontBook;
 use YetiPdf\Write\Layout\GlyphRun;
 use YetiPdf\Write\Layout\Layouter;
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 use YetiPdf\Write\PdfException;
 use YetiPdf\Write\Style;
 use PHPUnit\Framework\TestCase;
@@ -19,7 +19,7 @@ final class EdgeCaseTest extends TestCase
 
     private function render(string $body): string
     {
-        return (new YetiPdf(fonts: [self::ROOT . '/fonts']))->render("<document font=\"Figtree\">$body</document>");
+        return (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->render("<document font=\"Figtree\">$body</document>");
     }
 
     private static function strip(string $pdf): string

@@ -31,7 +31,7 @@ $doc = $engine === 'yetipdf'
 
 $render = match ($engine) {
     'yetipdf' => function () use ($doc, $fonts, $cache, $root) {
-        return (new YetiPdf\Write\YetiPdf(fonts: [$fonts], assets: [$root . '/examples/invoice'], cache: $cache . '/yetipdf'))->render($doc);
+        return (new YetiPdf\Write\YetiPdfWrite(fonts: [$fonts], assets: [$root . '/examples/invoice'], cache: $cache . '/yetipdf'))->render($doc);
     },
     'dompdf' => function () use ($doc, $fonts, $cache, $root) {
         $o = new Dompdf\Options();

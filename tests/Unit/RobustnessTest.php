@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace YetiPdf\Write\Tests\Unit;
 
-use YetiPdf\Write\YetiPdf;
+use YetiPdf\Write\YetiPdfWrite;
 use YetiPdf\Write\PdfException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +43,7 @@ final class RobustnessTest extends TestCase
     {
         $this->expectException(PdfException::class);
         $this->expectExceptionMessageMatches($message);
-        (new YetiPdf(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images']))->render($xml);
+        (new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], assets: [self::ROOT . '/tests/fixtures/images']))->render($xml);
     }
 
     public static function badImages(): iterable
@@ -67,7 +67,7 @@ final class RobustnessTest extends TestCase
             return true;
         });
         try {
-            (new YetiPdf(fonts: [self::ROOT . '/fonts']))->registerImage('x', $bytes)->render('<document><image src="@x"/></document>');
+            (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->registerImage('x', $bytes)->render('<document><image src="@x"/></document>');
             $this->fail('expected an exception');
         } catch (PdfException $e) {
             $this->assertNotSame('', $e->getMessage());
@@ -80,7 +80,7 @@ final class RobustnessTest extends TestCase
     public function testTinySvgArcBecomesALine(): void
     {
         $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M0 0 A1e-200 1e-200 0 0 1 10 10" stroke="black"/></svg>';
-        $pdf = (new YetiPdf(fonts: [self::ROOT . '/fonts']))->registerImage('x', $svg)->render('<document><image src="@x"/></document>');
+        $pdf = (new YetiPdfWrite(fonts: [self::ROOT . '/fonts']))->registerImage('x', $svg)->render('<document><image src="@x"/></document>');
         $this->assertStringStartsWith('%PDF', $pdf);
     }
 
@@ -90,7 +90,7 @@ final class RobustnessTest extends TestCase
         file_put_contents($tmp, "\0\1\0\0\0\5");
         try {
             $this->expectException(PdfException::class);
-            new YetiPdf(fonts: [$tmp]);
+            new YetiPdfWrite(fonts: [$tmp]);
         } finally {
             @unlink($tmp);
         }
@@ -98,7 +98,7 @@ final class RobustnessTest extends TestCase
 
     public function testKeptRowsMoveTheTableToAFreshPage(): void
     {
-        $p = new YetiPdf(fonts: [self::ROOT . '/fonts'], compress: false);
+        $p = new YetiPdfWrite(fonts: [self::ROOT . '/fonts'], compress: false);
         $pdf = $p->render('<document><page paper="200pt 120pt" margin="10pt"/><block height="45pt">INTRO</block>'
             . '<table columns="1fr" inset="0pt"><row keep="with-next"><cell>KEEP</cell></row><row><cell><block height="55pt">NEXT</block></cell></row></table></document>');
         $file = tempnam(sys_get_temp_dir(), 'pdf');
