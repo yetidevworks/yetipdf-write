@@ -410,7 +410,7 @@ final class ImageLoader
         if (!is_dir($this->cacheDir)) {
             @mkdir($this->cacheDir, 0775, true);
         }
-        $tmp = $file . '.' . getmypid() . '.tmp';
+        $tmp = $file . '.' . bin2hex(random_bytes(6)) . '.tmp';
         if (@file_put_contents($tmp, serialize($img)) !== false) {
             @rename($tmp, $file);
         }

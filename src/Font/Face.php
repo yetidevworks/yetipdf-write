@@ -66,7 +66,7 @@ final class Face
 
     private static function store(string $file, array $data): void
     {
-        $tmp = $file . '.' . getmypid() . '.tmp';
+        $tmp = $file . '.' . bin2hex(random_bytes(6)) . '.tmp';
         if (@file_put_contents($tmp, '<?php return ' . self::export($data) . ";\n") !== false) {
             @rename($tmp, $file);
         }
